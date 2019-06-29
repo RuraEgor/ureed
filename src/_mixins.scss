@@ -1,0 +1,60 @@
+// MIXIN-ADAPTIV
+//================================================================================
+@mixin max-w($width, $units: px) {
+  @media only screen and (max-width: $width + $units) {
+    @content
+  }
+}
+
+@mixin min-w($width, $units: px) {
+  @media only screen and (min-width: $width + $units) {
+    @content
+  }
+}
+
+@mixin max-min($width-max, $width-min, $units: px) {
+  @media only screen and (max-width: $width-max + $units) and (min-width: $width-min + $units) {
+    @content
+  }
+}
+
+
+@mixin max-h($height, $units: px) {
+  @media only screen and (max-height: $height + $units) {
+    @content
+  }
+}
+
+@mixin min-h($height, $units: px) {
+  @media only screen and (min-height: $height + $units){
+    @content
+  }
+}
+
+
+
+// ADAPTIV FONT
+//================================================================================
+@mixin font($f-min, $f-max, $v-min, $v-max, $imp: null, $units: px) {
+
+  font-size: calcFluidFontSize($f-min, $f-max, $v-min, $v-max, $units) $imp;
+
+  @media only screen and (min-width: ($v-max + $units)) {
+    font-size: ($f-max + $units) $imp;
+  }
+
+  @media only screen and (max-width: ($v-min + $units)) {
+    font-size: ($f-min + $units) $imp;
+  }
+}
+
+
+@function calcFluidFontSize($f-min, $f-max, $v-min, $v-max, $units: px) {
+
+  $k: ($f-max - $f-min)/($v-max - $v-min);
+  $b: $f-min - $k * $v-min;
+
+  $b: $b + $units;
+
+  @return  calc( #{$k} * 100vw + #{$b} );
+}

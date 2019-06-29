@@ -1,0 +1,62 @@
+.wow {
+  visibility: visible !important;
+}
+
+.title-page {
+  font-style: normal;
+  font-weight: 600;
+  line-height: 130%;
+}
+
+.sect-text-bl__title {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 130%;
+  margin-bottom: 20px;
+}
+
+.btn {
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid $gray;
+  color: $btText;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 17px;
+  background-color: $white;
+  border-radius: 4px;
+  padding: 2px 5px;
+  transition: background $tran-f;
+
+  &:hover {
+
+  }
+}
+
+.btn_cl {
+  border: none;
+  color: $white;
+  background-color: $grin;
+  box-shadow: 0px 4px 8px rgba(16, 180, 161, 0.2);
+}
+
+.svg-spot {
+  overflow: auto !important;
+  transform-origin: top left;
+}
+
+
+.sect-bl-vis__none {
+  .anim__tx-vis {
+    opacity: 0;
+  }
+}
+
+.svg-spot {
+  overflow: visible !important;
+  transform-origin: left top;
+}
