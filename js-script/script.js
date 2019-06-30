@@ -161,32 +161,49 @@ function sliderFreelance() {
         let copyElem = $elem.contents(getFirstSl).clone();
         copyElem.css({'opacity': 0});
 
-        anime({
-            targets: `${nameElem} ${getFirstSl}`,
-            opacity: 0,
-            duration: 350,
-            complete: function () {
-                anime({
-                    targets: `${nameElem}`,
-                    translateX: -elWidth,
-                    easing: paramEasing,
-                    duration: 1200,
-                    complete: function () {
-                        $elem.contents(getFirstSl).remove();
-                        $elem.append(copyElem);
-                        $elem.css({'transform': 'translateX(0)'});
-                        anime({
-                            targets: `${nameElem} ${getLastSl}`,
-                            opacity: 1,
-                            duration: 200,
-                            complete: function () {
-                                workSl = true;
-                            }
-                        })
-                    }
-                })
-            }
-        });
+        const timeAnim = 0.4;
+        const ltAnim = 0.04;
+
+        TweenMax.to(`${nameElem} ${getFirstSl}`, 0.35, { opacity: 0, onComplete: function() {
+
+            TweenMax.to(`${nameElem}`, 2.2, { x: -elWidth, parseTransform: true, ease: Back.easeOut.config(1.2), onComplete: function() {
+                $elem.contents(getFirstSl).remove();
+                $elem.append(copyElem);
+                TweenMax.set(`${nameElem}`, {x:0});
+
+                TweenMax.to(`${nameElem} ${getLastSl}`, 0.2, { opacity: 1, onComplete: function() {
+                    workSl = true;
+                }})
+            }})
+        } }
+        );
+
+        // anime({
+        //     targets: `${nameElem} ${getFirstSl}`,
+        //     opacity: 0,
+        //     duration: 350,
+        //     complete: function () {
+        //         anime({
+        //             targets: `${nameElem}`,
+        //             translateX: -elWidth,
+        //             easing: paramEasing,
+        //             duration: 1200,
+        //             complete: function () {
+        //                 $elem.contents(getFirstSl).remove();
+        //                 $elem.append(copyElem);
+        //                 $elem.css({'transform': 'translateX(0)'});
+        //                 anime({
+        //                     targets: `${nameElem} ${getLastSl}`,
+        //                     opacity: 1,
+        //                     duration: 200,
+        //                     complete: function () {
+        //                         workSl = true;
+        //                     }
+        //                 })
+        //             }
+        //         })
+        //     }
+        // });
     });
 
 
@@ -215,23 +232,31 @@ function sliderFreelance() {
 
         $elem.contents(getLastSl).remove();
         $elem.prepend(copyElem);
-        $elem.css({'transform': `translateX(-${elWidth}px)`});
+        TweenMax.set(`${nameElem}`, {x: -elWidth});
 
-        anime({
-            targets: nameElem,
-            translateX: 0,
-            easing: paramEasing,
-            complete: function () {
-                anime({
-                    targets: `${nameElem} ${getFirstSl}`,
-                    opacity: 1,
-                    duration: 350,
-                    complete: function () {
-                        workSl = true;
-                    }
-                })
-            }
-        });
+        TweenMax.to(`${nameElem}`, 2.2, { x: 0, parseTransform: true, ease: Back.easeOut.config(1.2), onComplete: function() {
+
+            TweenMax.to(`${nameElem} ${getFirstSl}`, 0.3, { opacity: 1, onComplete: function() {
+                workSl = true;
+            }})
+        } }
+        );
+
+        // anime({
+        //     targets: nameElem,
+        //     translateX: 0,
+        //     easing: paramEasing,
+        //     complete: function () {
+        //         anime({
+        //             targets: `${nameElem} ${getFirstSl}`,
+        //             opacity: 1,
+        //             duration: 350,
+        //             complete: function () {
+        //                 workSl = true;
+        //             }
+        //         })
+        //     }
+        // });
     });
 }
 
