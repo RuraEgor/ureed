@@ -21,7 +21,7 @@ function sliderJob(step = 1, numbInRow = 1) {
     $blSlideCount.text(countElem);
 	$elem.attr('data-numb', 0);
 
-    $arrowSlLeft.on('click', function () {
+    $arrowSlRight.on('click', function () {
 		const elWidth = $elem.contents('.slider__item').width();
 		let leftElem = countElem - elNumb;
 
@@ -62,7 +62,7 @@ function sliderJob(step = 1, numbInRow = 1) {
 	});
 
 
-    $arrowSlRight.on('click', function () {
+    $arrowSlLeft.on('click', function () {
         const elWidth = $elem.contents('.slider__item').width();
 
         if (elNumb == 0) {
@@ -116,7 +116,6 @@ function sliderJob(step = 1, numbInRow = 1) {
 }
 
 //=======
-//=======
 function sliderFreelance() {
     const nameElem = '#slider-freelance';
     const $elem = $(nameElem);
@@ -139,7 +138,7 @@ function sliderFreelance() {
     $blSlideCount.text(countElem);
     $elem.attr('data-numb', 0);
 
-    $arrowSlLeft.on('click', function () {
+    $arrowSlRight.on('click', function () {
         if (!workSl) return false;
         workSl = false;
 
@@ -179,7 +178,7 @@ function sliderFreelance() {
                         anime({
                             targets: `${nameElem} ${getLastSl}`,
                             opacity: 1,
-                            duration: 100,
+                            duration: 200,
                             complete: function () {
                                 workSl = true;
                             }
@@ -191,7 +190,7 @@ function sliderFreelance() {
     });
 
 
-    $arrowSlRight.on('click', function () {
+    $arrowSlLeft.on('click', function () {
         if (!workSl) return false;
         workSl = false;
 
@@ -300,8 +299,7 @@ function anim_freelance() {
 	tm.add(TweenMax.from(".js-anim__tx_freel", timeAnim, {opacity: 0, y: 50, delay: 0.8 }, ltAnim));
 	tm.add(TweenMax.staggerFrom(".js-anim__tx-1_freel", timeAnim, {opacity: 0, y: 50, delay: -0.3 }, ltAnim));
 	tm.add(TweenMax.staggerFrom(".js-anim__tx-2_freel", timeAnim, {opacity: 0, y: 50, delay: -0.5 }, ltAnim));
-	tm.add(TweenMax.staggerFrom(".js-anim__tx-2_freel", timeAnim, {opacity: 0, y: 50, delay: -0.5 }, ltAnim));
-	
+
 	tm_2.add(TweenMax.from(".js-anim__com-1_freel", 0.8, {opacity: 0, x: -40, delay: 1.5 }));
 	tm_2.add(TweenMax.staggerFrom(".js-anim__com-2_freel", 0.8, {opacity: 0, x: 40, delay: 0.2 }));
 }
@@ -330,7 +328,7 @@ function anim_powerful() {
 	const timeAnim = 0.4;
 	const ltAnim = 0.04;
 	
-	tm.add(TweenMax.from(".js-anim__tx_power", timeAnim, {opacity: 0, y: 50, delay: 0.8 }, ltAnim));
+	tm.add(TweenMax.from(".js-anim__tx_power", timeAnim, {opacity: 0, y: 50, delay: 1.2 }, ltAnim));
 }
 
 function anim_app() {
@@ -361,8 +359,15 @@ let tmDurSpotAnMin = 1500;
 spotAnim('#sect-freel-green');
 spotAnim('#sect-freel-blue');
 
+spotAnim('#sect-empl-yellow');
+spotAnim('#sect-empl-green');
+
 spotAnim('#sect-job-blue');
 spotAnim('#sect-job-red');
+
+spotAnim('#sect-app-blue');
+spotAnim('#ect-app-yellow');
+spotAnim('#sect-app-red');
 
 function spotAnim(nameSel) {
     // M30,20  C80,-25 147,03 170,20  S260,52 230,150  S170,252 140,240  S-75,270 30,20z
@@ -379,20 +384,20 @@ function spotAnim(nameSel) {
         $(`${nameSel} .svg-path`).attr('d', znSpot);
     }
 
-    // anime({
-    //     targets: `${nameSel} .svg-path`,
-    //     d: [
-    //         {value: znSpot},
-    //     ],
-    //     easing: 'linear',
-    //     duration: (function () {
-    //         return (tmDurSpotAn + Math.random()* tmDurSpotAnMax - tmDurSpotAnMin)
-    //     })(),
-    //     delay: (function () {
-    //         return (Math.random()* 1000)
-    //     })(),
-    //     complete: function () {
-    //         spotAnim(nameSel)
-    //     }
-    // });
+    anime({
+        targets: `${nameSel} .svg-path`,
+        d: [
+            {value: znSpot},
+        ],
+        easing: 'linear',
+        duration: (function () {
+            return (tmDurSpotAn + Math.random()* tmDurSpotAnMax - tmDurSpotAnMin)
+        })(),
+        delay: (function () {
+            return (Math.random()* 1000)
+        })(),
+        complete: function () {
+            spotAnim(nameSel)
+        }
+    });
 }

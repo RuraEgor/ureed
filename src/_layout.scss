@@ -6,6 +6,7 @@
   font-style: normal;
   font-weight: 600;
   line-height: 130%;
+  color: $default;
 }
 
 .sect-text-bl__title {
@@ -18,7 +19,7 @@
 
 .btn {
   min-height: 40px;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   border: 1px solid $gray;
@@ -29,19 +30,30 @@
   line-height: 17px;
   background-color: $white;
   border-radius: 4px;
-  padding: 2px 5px;
+  padding: 2px 20px;
   transition: background $tran-f;
+  transition: color $tran-f, border $tran-f, background-color $tran-f;
 
   &:hover {
+    color: $text;
+    border: 1px solid $colLg;
+  }
 
+  &:active {
+    background-color: $gray-l;
+    border: 1px solid $colLg;
   }
 }
 
 .btn_cl {
-  border: none;
-  color: $white;
-  background-color: $grin;
+  border: none !important;
+  color: $white !important;
+  background-color: $grin !important;
   box-shadow: 0px 4px 8px rgba(16, 180, 161, 0.2);
+
+  &:hover {
+
+  }
 }
 
 .svg-spot {
