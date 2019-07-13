@@ -2,27 +2,41 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0"/>
     <title>Ureed-web</title>
     <!-- css-files -->
     <link rel="stylesheet" href="css/libs/normalize.css">
     <link rel="stylesheet" href="src/styles.css">
-    <link href="https://fonts.googleapis.com/css?family=Mada:200,300,400,500,600,700,900&display=swap" rel="stylesheet">
+    <!--<link href="https://fonts.googleapis.com/css?family=Mada:200,300,400,500,600,700,900&display=swap" rel="stylesheet">-->
+    <link href="https://fonts.googleapis.com/css?family=Mada:400,500,600,700" rel="stylesheet">
     <!-- end css-files -->
     <!-- js-files -->
     <script src="js/jquery-3.2.1.js"></script>
     <script src="js/wow.js"></script>
     <script src="js/TweenMax.min.js"></script>
     <script src="js/anime.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-touchswipe@1.6.19/jquery.touchSwipe.min.js"></script>
     <!-- end js-files -->
 </head>
 <body>
-<div id="main-wrap" class="main-wrap">
+<div class="page-bl-cookie">
+    <div class="page-bl-cookie__wrap">
+        <p class="page-bl-cookie__text">To provide you with a better experience, this website uses cookies. By using the
+            website and agreeing to this policy, you consent to our use of cookies in accordance with the terms of this
+            policy.</p>
+        <button class="btn btn_cookie js-cookie-accept">Accept</button>
+    </div>
+</div>
+<div id="main-wrap" class="main-wrap bl-coolie-active_develop">
     <header id="header" class="header">
         <a href="" class="logo head-logo">
             <span class="head-logo__icon"></span>
             <span class="head-logo__text"><span class="head-logo__text_fr">u</span>reed</span>
         </a>
         <div class="head-menu">
+            <div class="head-menu__item head-menu__item_mob">
+                <a href="" class="head-menu__link head-menu__link_list head-menu__link_list-mob">En</a>
+            </div>
             <div class="head-menu__item">
                 <a href="" class="head-menu__link head-menu__link_list">English</a>
             </div>
@@ -36,140 +50,215 @@
     </header>
     <main id="main">
         <div class="wrap-page" id="wow">
-            <section class="page-sect page-sect_freelance wow wow_freelance active">
+            <section class="page-sect page-sect_freelance sect-bl-vis__none wow wow_freelance active">
                 <div class="page-sect__cont">
-                    <div class="page-sect-part__text page-sect-part__text_freel">
-                        <h1 class="title-page title-page_freel js-anim__tx_freel">Expert freelance linguists across
+                    <div class="title-page__cont">
+                        <h1 class="title-page title-page_freel title-page_freel-mob anim__tx-vis js-anim__tx_freel">Expert freelance
+                            linguists across
                             the world</h1>
-                        <div class="page-sect-part__desc">
-                            <div class="sect-text-bl">
-                                <h3 class="title-page sect-text-bl__title sect-text-bl__title_freel js-anim__tx-1_freel">
+                    </div>
+                    <div class="page-sect-part__text page-sect-part__text_freel">
+                        <h1 class="title-page title-page_freel anim__tx-vis js-anim__tx_freel">Expert freelance
+                            linguists across
+                            the world</h1>
+                        <div class="page-sect-part__desc page-sect-part__desc_freel">
+                            <div class="sect-bl-work sect-bl-work_mob anim__tx-vis js-anim__tx-3_freel">
+                                <span class="sect-bl-work__icon"></span>
+                                <span class="sect-bl-work__text sect-bl-work__text_mob">How it works?</span>
+                            </div>
+                            <!---->
+                            <div class="sect-text-bl sect-text-bl_empl sect-text-bl_empl-one">
+                                <h3 class="title-page sect-text-bl__title sect-text-bl__title_freel anim__tx-vis js-anim__tx-1_freel">
                                     Employer</h3>
-                                <p class="sect-text-bl__desc sect-text-bl__desc_freel js-anim__tx-1_freel">Post your
+                                <p class="sect-text-bl__desc sect-text-bl__desc_freel anim__tx-vis js-anim__tx-1_freel">
+                                    Post your
                                     projects and
                                     receive competitive bids within minutes.</p>
-                                <button class="btn btn_cl btn_freel js-anim__tx-1_freel">Become an Employer</button>
+                                <button class="btn btn_cl btn_freel anim__tx-vis js-anim__tx-1_freel">Become an
+                                    Employer
+                                </button>
                             </div>
-                            <div class="sect-text-bl">
-                                <h3 class="title-page sect-text-bl__title sect-text-bl__title_freel js-anim__tx-2_freel">
+                            <div class="sect-text-bl sect-text-bl_empl-two">
+                                <h3 class="title-page sect-text-bl__title sect-text-bl__title_freel anim__tx-vis js-anim__tx-2_freel">
                                     Freelancer</h3>
-                                <p class="sect-text-bl__desc sect-text-bl__desc_freel js-anim__tx-2_freel">Browse jobs
+                                <p class="sect-text-bl__desc sect-text-bl__desc_freel anim__tx-vis js-anim__tx-2_freel">
+                                    Browse jobs
                                     matching your skills,
                                     apply for work, get hired and earn.</p>
-                                <button class="btn btn_freel js-anim__tx-2_freel">Become a Freelancer</button>
+                                <button class="btn btn_freel anim__tx-vis js-anim__tx-2_freel">Become a Freelancer
+                                </button>
+                            </div>
+                            <!---->
+                            <div class="sect-bl-work sect-bl-work_desc anim__tx-vis js-anim__tx-3_freel">
+                                <span class="sect-bl-work__icon"></span>
+                                <span class="sect-bl-work__text">How it works?</span>
                             </div>
                         </div>
                     </div>
                     <div class="page-sect-part__vis page-sect-part__vis_freel">
-                        <div class="sect-dec-svg sect-dec-svg_top-freel"></div>
-                        <div class="sect-dec-svg sect-dec-svg_bottom-freel"></div>
-                        <!---->
-                        <svg width="230" height="230"
-                             id="sect-freel-green" class="svg-spot js-svg-spot sect-freel-spot sect-freel-spot_green">
-                            <path class="svg-path"
-                                  d="" fill="#32E3D0"/>
-                        </svg>
-                        <svg width="230" height="230"
-                             id="sect-freel-blue" class="svg-spot js-svg-spot sect-freel-spot sect-freel-spot_blue">
-                            <path class="svg-path"
-                                  d="" fill="#5FD4F9"/>
-                        </svg>
-                        <!---->
-                        <div class="sect-img-freel sect-img-freel_desc"></div>
-                        <div class="sect-img-freel sect-img-freel_mob"></div>
-                        <!---->
-                        <div class="sect-round-freel sect-round-freel_desc"></div>
-                        <div class="sect-round-freel sect-round-freel_mob"></div>
-                        <!---->
-                        <div class="sect-icon-freel sect-icon-freel_mail"></div>
-                        <div class="sect-icon-freel sect-icon-freel_bell"></div>
-                        <div class="sect-icon-freel sect-icon-freel_pen"></div>
-                        <!---->
-                        <div class="sect-comment-freel sect-comment-freel_top js-anim__com-1_freel">
-                            <p class="sect-comment-freel__text">Hi! I finished the job
-                                <span class="sect-comment-freel__smile sect-comment-freel__smile_sm"></span>
-                            </p>
-                        </div>
-                        <div class="sect-comment-freel sect-comment-freel_bottom js-anim__com-2_freel">
-                            <p class="sect-comment-freel__text">Yes, i’m seeing. The text are great!
-                                I'll send the payment now
-                                <span class="sect-comment-freel__smile sect-comment-freel__smile_bn"></span>
-                            </p>
-                        </div>
-                        <!---->
-                        <div class="sect-bl-work">
-                            <span class="sect-bl-work__icon"></span>
-                            <span class="sect-bl-work__text">How it works?</span>
+                        <div class="page-sect-part__vis-cont_freel">
+                            <div class="sect-dec-svg sect-dec-svg_top-freel"></div>
+                            <div class="sect-dec-svg sect-dec-svg_bottom-freel"></div>
+                            <!---->
+                            <svg width="140" height="136"
+                                 id="sect-freel-green" class="svg-spot js-svg-spot sect-freel-spot sect-freel-spot_green"
+                                 fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path class="svg-path"
+                                      d="M47.6762 0.412775C84.6093 -3.66592 75.5296 23.3894 95.8053 41.5396C108.025 52.4162 137.176 42.2874 139.77 68.663C142.364 95.0386 122.976 137.457 82.9026 135.962C42.8291 134.466 11.6305 97.0099 2.41427 68.663C-6.80195 40.316 10.8113 4.49147 47.6762 0.412775Z"
+                                      fill="#32E3D0"/>
+                            </svg>
+                            <svg width="217" height="212"
+                                 id="sect-freel-blue" class="svg-spot js-svg-spot sect-freel-spot sect-freel-spot_blue"
+                                 fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path class="svg-path"
+                                      d="M151.414 209.139C98.9388 224.231 109.339 175.546 87.0682 157.837C64.7979 140.129 26.2503 160.593 7.35424 113.394C-11.5418 66.1944 3.91208 22.8569 77.9077 5.92304C151.903 -11.0108 174.899 9.29289 205.351 54.9798C235.335 99.982 203.894 194.021 151.414 209.139Z"
+                                      fill="#5FD4F9"/>
+                            </svg>
+                            <!---->
+                            <div class="sect-img-freel sect-img-freel_desc"></div>
+                            <div class="sect-img-freel sect-img-freel_mob"></div>
+                            <!---->
+                            <div class="sect-round-freel sect-round-freel_desc"></div>
+                            <div class="sect-round-freel sect-round-freel_mob"></div>
+                            <!---->
+                            <div class="sect-icon-freel sect-icon-freel_mail"></div>
+                            <div class="sect-icon-freel sect-icon-freel_bell"></div>
+                            <div class="sect-icon-freel sect-icon-freel_pen"></div>
+                            <!---->
+                            <div class="sect-comment-freel sect-comment-freel_top js-anim__com-1_freel">
+                                <p class="sect-comment-freel__text">Hi! I finished the job
+                                    <span class="sect-comment-freel__smile sect-comment-freel__smile_sm"></span>
+                                </p>
+                            </div>
+                            <div class="sect-comment-freel sect-comment-freel_bottom js-anim__com-2_freel">
+                                <p class="sect-comment-freel__text">Yes, i’m seeing. The text are great!
+                                    I'll send the payment now
+                                    <span class="sect-comment-freel__smile sect-comment-freel__smile_bn"></span>
+                                </p>
+                            </div>
+                            <!---->
+                            <div class="sect-bl-work sect-bl-work_vis">
+                                <span class="sect-bl-work__icon"></span>
+                                <span class="sect-bl-work__text">How it works?</span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </section>
-            <section class="page-sect page-sect_empl wow wow_employer active">
+            <section class="page-sect page-sect_empl wow wow_employer sect-bl-vis__none active">
                 <div class="page-sect-part__text page-sect-part__text_empl">
                     <div class="page-sect-part__desc page-sect-part__desc_empl">
-                        <h2 class="title-page title-page_empl js-anim__tx_empl">Our Employers solve their tasks</h2>
+                        <h2 class="title-page title-page_empl anim__tx-vis js-anim__tx_empl">Our Employers <br>solve
+                            their
+                            tasks</h2>
                         <div class="sect-text-bl sect-text-bl_one">
-                            <p class="sect-text-bl__desc sect-text-bl__desc_empl js-anim__tx_empl">Text on how to be a
+                            <p class="sect-text-bl__desc sect-text-bl__desc_empl anim__tx-vis js-anim__tx_empl">Text on
+                                how to be a
                                 good
                                 employer. Employer benefits. An employer is a person or institution
                                 that hires employees.</p>
-                            <p class="sect-text-bl__desc sect-text-bl__desc_empl js-anim__tx_empl">Employers offer wages
+                            <p class="sect-text-bl__desc sect-text-bl__desc_empl anim__tx-vis js-anim__tx_empl">
+                                Employers offer wages
                                 or a salary to
                                 the
                                 workers in exchange for the worker's work or labor. One speaks of
                                 wages if the employer.</p>
-                            <button class="btn btn_cl btn_empl js-anim__tx_empl">Become an Employer</button>
+                            <button class="btn btn_cl btn_empl anim__tx-vis js-anim__tx_empl">Become an Employer
+                            </button>
                         </div>
                     </div>
                 </div>
                 <div class="page-sect-part__vis page-sect-part__vis_empl">
-                    <svg width="230" height="230"
-                         id="sect-empl-yellow" class="svg-spot js-svg-spot sect-empl-spot sect-empl-spot_yellow">
-                        <path class="svg-path"
-                              d="" fill="#FFC531"/>
-                    </svg>
-                    <svg width="230" height="230"
-                         id="sect-empl-green" class="svg-spot js-svg-spot sect-empl-spot sect-empl-spot_green">
-                        <path class="svg-path"
-                              d="" fill="#32E3D0"/>
-                    </svg>
-                    <!---->
-                    <div class="block-review block-review_bg">
-                        <p class="block-review__text">I worked on a big
-                            translation project that enabled me to make
-                            money and gain experience.</p>
-                        <p class="block-review__name">Tia Haddad</p>
-                        <div class="block-review__icon block-review__icon_bg"></div>
-                    </div>
-                    <div class="block-review block-review_pres">
-                        <p class="block-review__text">Had an urgent document
-                            that I needed to translate for a presentation.
-                            I posted it on Ureed, and got it back in under 24
-                            hours with excellent quality. Couldn't have
-                            asked for a better service.</p>
-                        <p class="block-review__name">Zaid Farekh</p>
-                        <div class="block-review__icon block-review__icon_pres"></div>
-                    </div>
-                    <div class="block-review block-review_ek">
-                        <p class="block-review__text">Ureed helped us get more done for less!</p>
-                        <p class="block-review__name">Mai Awawdeh</p>
-                        <div class="block-review__icon block-review__icon_ek"></div>
+                    <div class="page-sect-part__vis-cont page-sect-part__vis-cont_empl">
+                        <svg width="217" height="212"
+                             id="sect-empl-yellow" class="svg-spot js-svg-spot sect-empl-spot sect-empl-spot_yellow"
+                             fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path class="svg-path"
+                                  d="M151.414 209.139C98.9388 224.231 109.339 175.546 87.0682 157.837C64.7979 140.129 26.2503 160.593 7.35424 113.394C-11.5418 66.1944 3.91208 22.8569 77.9077 5.92304C151.903 -11.0108 174.899 9.29289 205.351 54.9798C235.335 99.982 203.894 194.021 151.414 209.139Z"
+                                  fill="#FFC531"/>
+                        </svg>
+                        <svg width="109" height="107"
+                             id="sect-empl-green" class="svg-spot js-svg-spot sect-empl-spot sect-empl-spot_green"
+                             fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path class="svg-path"
+                                  d="M37.1193 0.324757C65.8744 -2.88422 58.8052 18.402 74.5913 32.6819C84.1055 41.2392 106.801 33.2702 108.821 54.0216C110.841 74.773 95.7457 108.146 64.5456 106.97C33.3455 105.793 9.05517 76.324 1.87968 54.0216C-5.2958 31.7192 8.41735 3.53373 37.1193 0.324757Z"
+                                  fill="#F96879"/>
+                        </svg>
+                        <!---->
+                        <div class="block-review block-review_bg">
+                            <p class="block-review__text">I worked on a big
+                                translation project that enabled me to make
+                                money and gain experience.</p>
+                            <p class="block-review__name">Tia Haddad</p>
+                            <div class="block-review__icon block-review__icon_bg"></div>
+                        </div>
+                        <div class="block-review block-review_pres">
+                            <p class="block-review__text">Had an urgent document
+                                that I needed to translate for a presentation.
+                                I posted it on Ureed, and got it back in under 24
+                                hours with excellent quality. Couldn't have
+                                asked for a better service.</p>
+                            <p class="block-review__name">Zaid Farekh</p>
+                            <div class="block-review__icon block-review__icon_pres"></div>
+                        </div>
+                        <div class="block-review block-review_ek">
+                            <p class="block-review__text">Ureed helped us get more done for less!</p>
+                            <p class="block-review__name">Mai Awawdeh</p>
+                            <div class="block-review__icon block-review__icon_ek"></div>
+                        </div>
+                        <!---->
+                        <div class="slider-cont slider-cont_empl">
+                            <div id="slider-employers" class="slider slider-empl-type">
+                                <div class="slider__item slider__item_empl-type">
+                                    <div class="slider__item-cont slider__item-cont_empl-type">
+                                        <p class="slider__item-desc slider__item-desc_empl-type">I worked on a big translation project that enabled me
+                                            to make money and gain experience.</p>
+                                        <p class="slider__item-name slider__item-name_empl-type"
+                                           title="Tia Haddad">Tia Haddad</p>
+                                    </div>
+                                </div>
+                                <!---->
+                                <div class="slider__item slider__item_empl-type">
+                                    <div class="slider__item-cont slider__item-cont_empl-type">
+                                        <p class="slider__item-desc slider__item-desc_empl-type">Had an urgent document that I needed to translate for a
+                                            presentation. I posted it on Ureed, and got it back in under 24 hours with
+                                            excellent quality. Couldn't have asked for a better service.</p>
+                                        <p class="slider__item-name slider__item-name_empl-type"
+                                           title="Zaid Farekh">Zaid Farekh</p>
+                                    </div>
+                                </div>
+                                <!---->
+                                <div class="slider__item slider__item_empl-type">
+                                    <div class="slider__item-cont slider__item-cont_empl-type">
+                                        <p class="slider__item-desc slider__item-desc_empl-type">Ureed helped us get more done for less!</p>
+                                        <p class="slider__item-name slider__item-name_empl-type"
+                                           title="Mai Awawdeh">Mai Awawdeh</p>
+                                    </div>
+                                </div>
+                                <!---->
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
-            <section class="page-sect page-sect_job wow wow_job">
+            <section class="page-sect page-sect_job wow wow_job sect-bl-vis__none">
                 <div class="page-sect-part__text page-sect-part__text_job">
                     <div class="page-sect-part__desc page-sect-part__desc_empl">
-                        <h2 class="title-page title-page_empl js-anim__tx_job">Top Freelancers get the best jobs</h2>
+                        <h2 class="title-page title-page_empl anim__tx-vis js-anim__tx_job">Top Freelancers <br>get the
+                            best
+                            jobs</h2>
                         <div class="sect-text-bl sect-text-bl_one">
-                            <p class="sect-text-bl__desc sect-text-bl__desc_empl js-anim__tx_job">Text on how to be a
+                            <p class="sect-text-bl__desc sect-text-bl__desc_empl anim__tx-vis js-anim__tx_job">Text on
+                                how to be a
                                 good freelancer.
                                 Freelancer benefits. A freelancer or freelance worker, is a term commonly used for a
                                 person.</p>
-                            <p class="sect-text-bl__desc sect-text-bl__desc_empl js-anim__tx_job">Who is self-employed
+                            <p class="sect-text-bl__desc sect-text-bl__desc_empl anim__tx-vis js-anim__tx_job">Who is
+                                self-employed
                                 and is not
                                 necessarily committed to a particular employer long-term. Once they get paid.</p>
-                            <button class="btn btn_cl btn_empl js-anim__tx_job">Become a Freelancer</button>
+                            <button class="btn btn_cl btn_empl anim__tx-vis js-anim__tx_job">Become a Freelancer
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -184,15 +273,19 @@
                             <div class="slider__manag-arrow slider__manag-arrow_rt js-sl-arrow-rt_power"></div>
                         </div>
                     </div>
-                    <svg width="230" height="230"
-                         id="sect-job-blue" class="svg-spot js-svg-spot sect-job-spot sect-job-spot_blue">
+                    <svg width="217" height="212"
+                         id="sect-job-blue" class="svg-spot js-svg-spot sect-job-spot sect-job-spot_blue"
+                         fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path class="svg-path"
-                              d="" fill="#5FD4F9"/>
+                              d="M151.414 209.139C98.9388 224.231 109.339 175.546 87.0682 157.837C64.7979 140.129 26.2503 160.593 7.35424 113.394C-11.5418 66.1944 3.91208 22.8569 77.9077 5.92304C151.903 -11.0108 174.899 9.29289 205.351 54.9798C235.335 99.982 203.894 194.021 151.414 209.139Z"
+                              fill="#5FD4F9"/>
                     </svg>
-                    <svg width="230" height="230"
-                         id="sect-job-red" class="svg-spot js-svg-spot sect-job-spot sect-job-spot_red">
+                    <svg width="109" height="107"
+                         id="sect-job-red" class="svg-spot js-svg-spot sect-job-spot sect-job-spot_red"
+                         fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path class="svg-path"
-                              d="" fill="#F96879"/>
+                              d="M37.1193 0.324757C65.8744 -2.88422 58.8052 18.402 74.5913 32.6819C84.1055 41.2392 106.801 33.2702 108.821 54.0216C110.841 74.773 95.7457 108.146 64.5456 106.97C33.3455 105.793 9.05517 76.324 1.87968 54.0216C-5.2958 31.7192 8.41735 3.53373 37.1193 0.324757Z"
+                              fill="#F96879"/>
                     </svg>
                     <div id="slider-freelance" class="slider slider-freel">
                         <div class="slider__item">
@@ -254,10 +347,11 @@
                     </div>
                 </div>
             </section>
-            <section class="page-sect page-sect_powerful wow wow_powerful">
+            <section class="page-sect page-sect_powerful wow wow_powerful sect-bl-vis__none">
                 <div class="page-sect-part__text">
                     <div class="page-sect-part__desc page-sect-part__desc_empl">
-                        <h2 class="title-page title-page_powerful js-anim__tx_power">Powerful set of popular job
+                        <h2 class="title-page title-page_powerful anim__tx-vis js-anim__tx_power">Powerful set of <br>
+                            popular job
                             types</h2>
                     </div>
                     <div class="slider-wrap">
@@ -267,7 +361,7 @@
                                     class="slider__manag_count slider__count-js_job"></span>
                             </div>
                             <div class="slider__manag-arrow-wr">
-                                <div class="slider__manag-arrow slider__manag-arrow_lf js-sl-arrow-lf_job"></div>
+                                <div class="slider__manag-arrow slider__manag-arrow_lf js-sl-arrow-lf_job disable"></div>
                                 <div class="slider__manag-arrow slider__manag-arrow_rt js-sl-arrow-rt_job"></div>
                             </div>
                         </div>
@@ -320,21 +414,22 @@
                                     <div class="slider__item-title">Blogging</div>
                                 </div>
                             </div>
+                            <!---->
                         </div>
                     </div>
                 </div>
             </section>
             <section class="page-sect page-sect_start wow wow_start sect-bl-vis__none">
                 <div class="page-bl page-bl_app active">
-                    <div class="wow wow_app bl-app_mark"></div>
+                    <div class="wow wow_app sect-bl-vis__none_app bl-app_mark"></div>
                     <div class="page-bl__part-desc">
-                        <h2 class="title-page title-page_app js-anim__tx_app">Get the app to
-                            have access to work anytime</h2>
-                        <p class="page-bl__text page-bl__text_app js-anim__tx_app">All linguistic
+                        <h2 class="title-page title-page_app anim__tx-vis_app js-anim__tx_app">Get the app to
+                            have <br>access to work anytime</h2>
+                        <p class="page-bl__text page-bl__text_app anim__tx-vis_app js-anim__tx_app">All linguistic
                             services from translation to blogging
                             to content creation to script writing
                             and much more are all in your pocket now.</p>
-                        <div class="bl-brand js-anim__tx_app">
+                        <div class="bl-brand anim__tx-vis_app js-anim__tx_app">
                             <div class="bl-brand__item">
                                 <span class="bl-brand__icon bl-brand__icon_google"></span>
                                 <span class="bl-brand__icon-text bl-brand__icon-text_google"></span>
@@ -347,20 +442,26 @@
                     </div>
                     <div class="page-bl__part-vis">
                         <div class="page-bl__part-vis-item page-bl-spot">
-                            <svg width="230" height="230"
-                                 id="sect-app-blue" class="svg-spot js-svg-spot sect-app-spot sect-app-spot_blue">
+                            <svg width="217" height="212"
+                                 id="sect-app-blue" class="svg-spot js-svg-spot sect-app-spot sect-app-spot_blue"
+                                 fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path class="svg-path"
-                                      d="" fill="#5FD4F9"/>
+                                      d="M151.414 209.139C98.9388 224.231 109.339 175.546 87.0682 157.837C64.7979 140.129 26.2503 160.593 7.35424 113.394C-11.5418 66.1944 3.91208 22.8569 77.9077 5.92304C151.903 -11.0108 174.899 9.29289 205.351 54.9798C235.335 99.982 203.894 194.021 151.414 209.139Z"
+                                      fill="#5FD4F9"/>
                             </svg>
-                            <svg width="230" height="230"
-                                 id="ect-app-yellow" class="svg-spot js-svg-spot sect-app-spot sect-app-spot_yellow">
+                            <svg width="140" height="136"
+                                 id="sect-app-yellow" class="svg-spot js-svg-spot sect-app-spot sect-app-spot_yellow"
+                                 fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path class="svg-path"
-                                      d="" fill="#FFC531"/>
+                                      d="M47.6762 0.412775C84.6093 -3.66592 75.5296 23.3894 95.8053 41.5396C108.025 52.4162 137.176 42.2874 139.77 68.663C142.364 95.0386 122.976 137.457 82.9026 135.962C42.8291 134.466 11.6305 97.0099 2.41427 68.663C-6.80195 40.316 10.8113 4.49147 47.6762 0.412775Z"
+                                      fill="#FFC531"/>
                             </svg>
-                            <svg width="230" height="230"
-                                 id="sect-app-red" class="svg-spot js-svg-spot sect-app-spot sect-app-spot_red">
+                            <svg width="109" height="107"
+                                 id="sect-app-red" class="svg-spot js-svg-spot sect-app-spot sect-app-spot_red"
+                                 fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path class="svg-path"
-                                      d="" fill="#F96879"/>
+                                      d="M37.1193 0.324757C65.8744 -2.88422 58.8052 18.402 74.5913 32.6819C84.1055 41.2392 106.801 33.2702 108.821 54.0216C110.841 74.773 95.7457 108.146 64.5456 106.97C33.3455 105.793 9.05517 76.324 1.87968 54.0216C-5.2958 31.7192 8.41735 3.53373 37.1193 0.324757Z"
+                                      fill="#F96879"/>
                             </svg>
                         </div>
                         <div class="page-bl__part-vis-item page-bl-app-img">
@@ -372,7 +473,7 @@
                 <!---->
                 <div class="page-sect-part__text page-sect-part__text_start">
                     <div class="page-sect-part__desc page-sect-part__desc_start">
-                        <h2 class="title-page title-page_start anim__tx-vis js-anim__tx_start">Let’s started now — make
+                        <h2 class="title-page title-page_start anim__tx-vis js-anim__tx_start">Let’s started now — <br>make
                             things happened!</h2>
                         <p class="desc-page desc-page_start anim__tx-vis js-anim__tx_start">Create an account and get
                             started with ureed.com right
@@ -383,14 +484,16 @@
                     <div class="page-sect-part__desc page-sect-part__desc_start-vis">
                         <div class="sect-text-bl sect-text-bl_start">
                             <p class="sect-text-bl__desc sect-text-bl__desc_start anim__tx-vis js-anim__tx-1_start">I'm
-                                an Employer,<br>I want to hire.</p>
+                                an Employer, <br class="sect-text_br-start">I want to hire.</p>
                             <button class="btn btn_cl btn_start anim__tx-vis js-anim__tx-1_start">Become an Employer
                             </button>
                         </div>
                         <div class="sect-text-bl sect-text-bl_start">
                             <p class="sect-text-bl__desc sect-text-bl__desc_start anim__tx-vis js-anim__tx-2_start">I'm
-                                a Freelancer,<br>I want to work.</p>
-                            <button class="btn btn_start btn_start-fr anim__tx-vis js-anim__tx-2_start">Become a Freelancer</button>
+                                a Freelancer, <br class="sect-text_br-start">I want to work.</p>
+                            <button class="btn btn_start btn_start-fr anim__tx-vis js-anim__tx-2_start">Become a
+                                Freelancer
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -398,7 +501,7 @@
         </div>
     </main>
     <footer id="footer" class="footer">
-        <p class="footer__copyright">Copyright © 2017 Ureed DMCC (License No. 288658)</p>
+        <p class="footer__copyright"><span>Copyright © 2017 Ureed DMCC (License No. 288658)</span></p>
         <div class="footer-menu">
             <div class="footer-menu__item">
                 <a href="#" class="footer-menu__link">About Us</a>
