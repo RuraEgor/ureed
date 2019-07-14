@@ -301,6 +301,156 @@ function sliderEmployers(step = 1, numbInRow = 1) {
 	}
 }
 
+
+//=======
+function sliderFreelanceMob(step = 1, numbInRow = 1) {
+	
+	const nameElem = '#slider-freelanc_mob';
+	
+	const $elem = $(nameElem);
+	const $slManage = $('.slider__manag_job-type');
+	
+	const $blSlideNubm = $('.slider__manag_numb-js_job');
+	const $blSlideCount = $('.slider__count-js_job');
+	
+	const $arrowSlLeft = $('.js-sl-arrow-lf_job');
+	const $arrowSlRight = $('.js-sl-arrow-rt_job');
+	
+	const countElem = $elem.contents('.slider__item').length;
+	const paramEasing = 'spring(1, 45, 11, 2)';
+	
+	let elNumb = 0;
+	let shiftWidth = 0;
+	
+	$elem.attr('data-cunt', countElem);
+	$blSlideCount.text(countElem);
+	$elem.attr('data-numb', 0);
+	
+	$arrowSlRight.on('click', SliderMoveRight);
+	$arrowSlLeft.on('click', SliderMoveLeft);
+	
+	$elem.swipe({
+		swipeStatus: function(event, phase, direction) {
+			if (phase=="end"){
+				if (direction == 'left') {
+					SliderMoveRight();
+				}
+				if (direction == 'right') {
+					SliderMoveLeft();
+				}
+			}},
+		triggerOnTouchEnd:false,
+		threshold: 20
+	});
+	
+	function SliderMoveRight() {
+		step = slJobCountSl;
+		numbInRow = slJobViewSl;
+		
+		const elWidth = $elem.contents('.slider__item').innerWidth();
+		let leftElem = countElem - elNumb;
+		
+		$slManage.find('.slider__manag-arrow').removeClass('disable');
+		
+		if (leftElem == 0) {
+			$(this).addClass('disable');
+			return false;
+		}
+		
+		let unFullStep = leftElem - numbInRow;
+		
+		if ( unFullStep <= step) {
+			shiftWidth = (elNumb + unFullStep) * elWidth;
+			elNumb += unFullStep;
+			$elem.attr('data-numb', elNumb);
+			$blSlideNubm.text(elNumb + 1);
+			anime({
+				targets: nameElem,
+				translateX: -shiftWidth,
+				easing: paramEasing
+			});
+			
+			$(this).addClass('disable');
+			
+			return false;
+		}
+		
+		if (leftElem > step) {
+			shiftWidth = (elNumb + step) * elWidth;
+			elNumb += step;
+			$elem.attr('data-numb', elNumb);
+			$blSlideNubm.text(elNumb + 1);
+			anime({
+				targets: nameElem,
+				translateX: -shiftWidth,
+				easing: paramEasing
+			});
+			
+			return false;
+		}
+	}
+	
+	
+	function SliderMoveLeft() {
+		
+		step = slJobCountSl;
+		numbInRow = slJobViewSl;
+		
+		const elWidth = $elem.contents('.slider__item').innerWidth();
+		$slManage.find('.slider__manag-arrow').removeClass('disable');
+		
+		if (elNumb == 0) {
+			$(this).addClass('disable');
+			return false;
+		}
+		
+		let unFullStep = elNumb - step;
+		
+		if ( unFullStep <= 0) {
+			elNumb = 0;
+			$elem.attr('data-numb', elNumb);
+			$blSlideNubm.text(1);
+			anime({
+				targets: nameElem,
+				translateX: 0,
+				easing: paramEasing
+			});
+			
+			$(this).addClass('disable');
+			
+			return false;
+		}
+		
+		if ( unFullStep < step) {
+			shiftWidth = unFullStep * elWidth;
+			elNumb = unFullStep;
+			$elem.attr('data-numb', elNumb);
+			$blSlideNubm.text(elNumb + 1);
+			anime({
+				targets: nameElem,
+				translateX: -shiftWidth,
+				easing: paramEasing
+			});
+			
+			return false;
+		}
+		
+		if (elNumb > step) {
+			shiftWidth = (elNumb - step) * elWidth;
+			elNumb -= step;
+			$elem.attr('data-numb', elNumb);
+			$blSlideNubm.text(elNumb + 1);
+			anime({
+				targets: nameElem,
+				translateX: -shiftWidth,
+				easing: paramEasing
+			});
+			
+			return false;
+		}
+	}
+}
+
 //=======
 function sliderFreelance() {
     const nameElem = '#slider-freelance';
@@ -434,6 +584,7 @@ function sliderFreelance() {
 $(function () {
 	
 	sliderFreelance();
+	sliderFreelanceMob(slJobCountSl, slJobViewSl);
 	sliderJob(slJobCountSl, slJobViewSl);
 	sliderEmployers(slJobCountSl, slJobViewSl);
 	
@@ -520,6 +671,7 @@ function anim_freelance() {
 	tm.add(TweenMax.staggerFrom(".js-anim__tx-1_freel", timeAnim, {opacity: 0, y: 50, delay: -0.3 }, ltAnim));
 	tm.add(TweenMax.staggerFrom(".js-anim__tx-2_freel", timeAnim, {opacity: 0, y: 50, delay: -0.5 }, ltAnim));
 	tm.add(TweenMax.staggerFrom(".js-anim__tx-3_freel", timeAnim, {opacity: 0, y: 50, delay: -0.5 }, ltAnim));
+	// tm.timeScale(2);
 
 	tm_2.add(TweenMax.from(".js-anim__com-1_freel", 0.9, {opacity: 0, x: -40, delay: 0.1 }));
 	tm_2.add(TweenMax.staggerFrom(".js-anim__com-2_freel", 0.9, {opacity: 0, x: 40, delay: 0.1 }));
@@ -597,6 +749,7 @@ let maxDotJobYellow = [
 	'M47.6762 0.412775C84.6093 -3.66592 75.5296 23.3894 95.8053 41.5396C108.025 52.4162 137.176 42.2874 139.77 68.663C142.364 95.0386 122.976 137.457 82.9026 135.962C42.8291 134.466 11.6305 97.0099 2.41427 68.663C-6.80195 40.316 10.8113 4.49147 47.6762 0.412775Z'
 ];
 
+
 spotAnim('#sect-empl-green', maxDotJobRed);
 spotAnim('#sect-job-red', maxDotJobRed);
 spotAnim('#sect-app-red', maxDotJobRed);
@@ -658,6 +811,11 @@ function parSlider() {
 	if (screenWidth <= 970) {
 		slJobCountSl = 2;
 		slJobViewSl = 2;
+	}
+	
+	if (screenWidth <= 600) {
+		slJobCountSl = 1;
+		slJobViewSl = 1;
 	}
 }
 

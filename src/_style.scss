@@ -392,10 +392,14 @@ body {
 .sect-text-bl_empl-one {
   @include max-w(760) {
     width: 100%;
-    max-width: 254px;
+    max-width: 260px;
   }
 
-  @include max-w(600) {
+  @include max-w(670) {
+    max-width: 200px;
+  }
+
+  @include max-w(470) {
     max-width: 100%;
   }
 }
@@ -403,10 +407,14 @@ body {
 .sect-text-bl_empl-two {
   @include max-w(760) {
     width: 100%;
-    max-width: 254px;
+    max-width: 260px;
   }
 
-  @include max-w(600) {
+  @include max-w(670) {
+    max-width: 200px;
+  }
+
+  @include max-w(470) {
     max-width: 100%;
   }
 }
@@ -923,37 +931,54 @@ body {
   position: absolute;
 }
 
-.sect-freel-spot_green {
+.sect-freel-spot__cont_green {
   z-index: 12;
   left: 387px;
   top: 212px;
-  transform: rotate(90deg);
-  transform-origin: center;
+  width: 140px;
+  height: 136px;
 
   @include max-w(1024) {
-    left: 250px;
-    top: 123px;
-    width: 107px;
-    height: 110px;
+    left: 248px;
+    top: 128px;
+    transform: scale(0.78);
+  }
+
+  @include max-w(760) {
+    left: 174px;
+    top: 77px;
+    transform: scale(0.5);
   }
 }
 
-.sect-freel-spot_blue {
-  top: 320px;
-  z-index: 14;
+.sect-freel-spot_green {
+  position: static;
+  transform: rotate(90deg);
+  transform-origin: center;
+}
+
+.sect-freel-spot__cont_blue {
+  z-index: 12;
   left: 39px;
+  top: 320px;
+  width: 217px;
+  height: 212px;
 
   @include max-w(1024) {
     left: 35px;
     top: 238px;
+    //transform: scale(0.78);
   }
 
   @include max-w(760) {
-    width: 144px;
-    height: 137px;
     left: 17px;
-    top: 162px;
+    top: 168px;
+    transform: scale(0.67);
   }
+}
+
+.sect-freel-spot_blue {
+  z-index: 14;
 }
 
 // FREELANCE-SECTION END =================================================
@@ -1038,6 +1063,10 @@ body {
     flex-wrap: wrap;
     justify-content: space-between;
     max-width: 540px;
+  }
+
+  @include max-w(710) {
+    margin-bottom: 20px;
   }
 
   @include max-w(600) {
@@ -1266,16 +1295,42 @@ body {
   z-index: 5;
 }
 
-.sect-empl-spot_yellow {
+.sect-empl-spot__cont {
+  position: absolute;
+}
+
+.sect-empl-spot__cont_yellow {
+  width: 217px;
+  height: 212px;
   top: 31px;
   left: 3px;
+
+  @include max-w(710) {
+    top: -86px;
+    left: -67px;
+    transform: scale(0.64);
+  }
+}
+
+.sect-empl-spot_yellow {
   transform: rotate(90deg);
   transform-origin: center;
 }
 
-.sect-empl-spot_green {
+.sect-empl-spot__cont_green {
+  width: 109px;
+  height: 107px;
   top: 254px;
   left: 487px;
+
+  @include max-w(710) {
+    top: 160px;
+    right: 27px;
+    left: inherit;
+  }
+}
+
+.sect-empl-spot_green {
   transform: rotate(90deg);
   transform-origin: center;
 }
@@ -1337,6 +1392,32 @@ body {
   @include max-w(700) {
     margin-left: -10px;
     margin-right: -10px;
+  }
+
+  .slider__item {
+    position: relative;
+    z-index: 3;
+
+    &:first-of-type {
+      z-index: 2;
+    }
+  }
+
+  @include max-w(700) {
+    margin-left: -10px;
+    margin-right: -10px;
+  }
+
+  @include max-w(600) {
+    display: none;
+  }
+}
+
+.slider-freel_mob {
+  display: none;
+
+  @include max-w(600) {
+    display: flex;
   }
 }
 
@@ -1432,19 +1513,45 @@ body {
   color: $text;
 }
 
+.sect-job-spot__cont {
+  position: absolute;
+}
+
 .sect-job-spot {
   position: absolute;
   z-index: 5;
 }
 
-.sect-job-spot_blue {
+.sect-job-spot__cont_blue {
+  width: 217px;
+  height: 212px;
   top: 165px;
   left: 40px;
+
+  @include max-w(1070) {
+    top: 152px;
+    left: -117px;
+  }
+}
+
+.sect-job-spot_blue {
+
+}
+
+.sect-job-spot__cont_red {
+  width: 109px;
+  height: 107px;
+  top: 374px;
+  left: 290px;
+
+  @include max-w(1070) {
+    top: 362px;
+    left: 92px;
+  }
 }
 
 .sect-job-spot_red {
-  top: 374px;
-  left: 290px;
+
 }
 
 // FREELANCE-TOP-SECTION END ============================================
@@ -1868,11 +1975,12 @@ body {
     display: block;
     transform: inherit;
     position: static;
-    padding: 0 60px 0px;
+    padding: 0 60px 0;
     margin-bottom: 70px;
   }
 
   @include max-w(600) {
+    padding: 0 30px 0;
     margin-left: -30px;
   }
 
@@ -1914,10 +2022,18 @@ body {
   &.active {
     .page-bl-app-img__item_top {
       transform: translateX(30px);
+
+      @include max-w(600) {
+          transform: translateX(0);
+      }
     }
 
     .page-bl-app-img__item_bot {
       transform: translateX(40px);
+
+      @include max-w(600) {
+          transform: translateX(0);
+      }
     }
   }
 }
@@ -1969,6 +2085,11 @@ body {
 
 .bl-brand {
   display: flex;
+
+  @include max-w(760) {
+    position: relative;
+    z-index: 30;
+  }
 }
 
 .bl-brand__item {
@@ -2042,7 +2163,7 @@ body {
     max-width: inherit;
     width: 100vw;
     margin-left: -30px;
-    //pointer-events: none;
+    pointer-events: none;
   }
 }
 
@@ -2053,6 +2174,7 @@ body {
   right: 0;
   bottom: 0;
   left: 0;
+  margin-left: 28px;
 }
 
 .page-bl-app-img {
@@ -2070,9 +2192,8 @@ body {
 
 .page-bl-app-img__item_top {
   background-image: url("../img/app-img-mob-1.png");
-  //left: 105px;
   right: 70px;
-  height: 337px;
+  height: 513px;
   width: 455px;
   z-index: 45;
   transition: transform 2s;
@@ -2095,6 +2216,11 @@ body {
   background-image: url("../img/app-img-mob-2.png");
   //left: 275px;
   right: 0;
+  height: 518px;
+  width: 356px;
+
+  right: inherit;
+  left: 275px;
   height: 518px;
   width: 356px;
   z-index: 40;
@@ -2144,6 +2270,12 @@ body {
   bottom: -43px;
   //transform: rotate(-90deg);
   transform-origin: right bottom;
+}
+
+.sect-text_br-app {
+  @include max-w(455) {
+    display: none;
+  }
 }
 
 // APP-SECTION END ===================================================
@@ -2222,6 +2354,7 @@ body {
 .desc-page_start {
   max-width: 410px;
   font-style: normal;
+  line-height: 140%;
 }
 
 
