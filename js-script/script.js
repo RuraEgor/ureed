@@ -804,7 +804,7 @@ function parSlider() {
 	}
 	
 	if (screenWidth <= 1270) {
-		slJobCountSl = 3;
+		slJobCountSl = 4;
 		slJobViewSl = 3;
 	}
 	
